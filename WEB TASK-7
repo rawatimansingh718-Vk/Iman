@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Instant Noodles</title>
+</head>
+<body>
+
+  <h1>Instant Noodles</h1>
+
+  <h2>What You Need</h2>
+  <ul>
+    <li>1 packet of instant noodles</li>
+    <li>2 cups of water</li>
+    <li>1 egg</li>
+    <li>1 green onion</li>
+    <li>1 teaspoon of cooking oil</li>
+  </ul>
+
+  <h2>Steps</h2>
+  <ol>
+    <li>Boil 2 cups of water in a pot.</li>
+    <li>Add the instant noodles to the boiling water.</li>
+    <li>Add the noodle seasoning and stir well.</li>
+    <li><strong>Be careful because the water is very hot.</strong></li>
+    <li>Add one egg and cook for 2 minutes.</li>
+    <li><em>Stir the noodles gently and enjoy them while they are hot.</em></li>
+  </ol>
+
+</body>
+</html>
+
