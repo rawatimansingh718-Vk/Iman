@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Favourites</title>
+</head>
+<body>
+
+  <h1>My Favourites</h1>
+
+  <div class="card">
+    <h2>Muna Madan</h2>
+    <img src="https://picsum.photos/300/200?random=1" alt="A traditional scene from Nepal">
+    <p><strong>Muna Madan</strong> is a famous Nepali book by Laxmi Prasad Devkota. I <em>really enjoy</em> its story and message about love and life.</p>
+    <a href="https://en.wikipedia.org/wiki/Muna_Madan" target="_blank">Learn More</a>
+  </div>
+
+  <div class="card">
+    <h2>Weak Hero Class 1</h2>
+    <img src="https://picsum.photos/300/200?random=2" alt="A Korean drama scene">
+    <p><strong>Weak Hero Class 1</strong> is a Korean drama about a student who faces bullying. I <em>really enjoy</em> the story and the characters.</p>
+    <a href="https://www.netflix.com/title/81742615" target="_blank">Learn More</a>
+  </div>
+
+  <div class="card">
+    <h2>YouTube</h2>
+    <img src="https://picsum.photos/300/200?random=3" alt="A computer screen showing a video website">
+    <p><strong>YouTube</strong> is a popular website for watching videos. I <em>often use</em> it to learn new things and watch entertainment.</p>
+    <a href="https://www.youtube.com/" target="_blank">Learn More</a>
+  </div>
+
+</body>
+</html>
