@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instant Noodles</title>
 </head>
 <body>
 
   <h1>Instant Noodles</h1>
-
   <h2>What You Need</h2>
   <ul>
     <li>1 packet of instant noodles</li>
