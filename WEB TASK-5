@@ -12,18 +12,16 @@
        height="200">
   <p>
     My name is <strong>Iman Rawat</strong>, and I am a university student
-    interested in <em>cloud computing and web development</em>.
+    interested in <em>web development</em>.
   </p>
   <h2>My Skills</h2>
 
   <ul>
     <li>HTML</li>
-    <li>Python</li>
-    <li>Cloud Computing</li>
+    <li>CSS</li>
   </ul>
 
-  <a href="https://gachon.ac.kr" target="_blank" rel="noopener noreferrer"> Visit my university
-  </a>
+  <a href="https://gachon.ac.kr" target="_blank" rel="noopener noreferrer"> Visit my university  </a>
 
   <footer>
     <p>&copy; 2026 Iman Rawat</p>
