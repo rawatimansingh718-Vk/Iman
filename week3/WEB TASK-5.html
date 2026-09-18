@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fixed Navigation</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #1e293b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      box-sizing: border-box;
+    }
+
+    .logo {
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .links a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .links a:hover {
+      color: teal;
+    }
+
+    main {
+      padding: 100px 20px 20px;
+      min-height: 1500px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">My Logo</div>
+
+    <div class="links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>My Website</h1>
+    <p>Scroll down to see the fixed navigation bar.</p>
+  </main>
+
+</body>
+</html>
