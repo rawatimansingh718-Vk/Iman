@@ -1,0 +1,14 @@
+<script>
+const card = document.querySelector("#card");
+const button = document.querySelector("#toggle");
+
+button.addEventListener("click", function() {
+  card.classList.toggle("dark");
+
+  if (card.classList.contains("dark")) {
+    button.textContent = "Light Mode";
+  } else {
+    button.textContent = "Dark Mode";
+  }
+});
+ </script>
