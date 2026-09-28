@@ -1,1 +1,17 @@
+<script>
+const button = document.querySelector("#clicker");
+const count = document.querySelector("#count");
+const message = document.querySelector("#message");
 
+let clicks = 0;
+
+button.addEventListener("click", function() {
+  clicks++;
+  count.textContent = clicks;
+
+  if (clicks >= 5) {
+    button.classList.add("done");
+    message.textContent = "Congratulations!";
+  }
+});
+</script>
