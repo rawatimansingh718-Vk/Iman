@@ -1,17 +1,41 @@
-<script>
-const button = document.querySelector("#clicker");
-const count = document.querySelector("#count");
-const message = document.querySelector("#message");
+<!DOCTYPE html>
+<html>
+<body style="font-family:system-ui;padding:24px;text-align:center">
 
-let clicks = 0;
+  <style>
+    .done { background: #16a34a !important; }
+  </style>
 
-button.addEventListener("click", function() {
-  clicks++;
-  count.textContent = clicks;
+  <button id="clicker" style="
+    padding:14px 32px;font-size:18px;border:none;
+    background:#1a56db;color:white;border-radius:10px;
+    cursor:pointer;transition:background .3s">
+    Click me!
+  </button>
 
-  if (clicks >= 5) {
-    button.classList.add("done");
-    message.textContent = "Congratulations!";
-  }
-});
-</script>
+  <p id="count" style="font-size:32px;font-weight:bold;margin:16px 0">0</p>
+
+  <p id="message" style="font-size:16px;color:#666">
+    Keep clicking...
+  </p>
+
+  <script>
+    const button = document.querySelector("#clicker");
+    const count = document.querySelector("#count");
+    const message = document.querySelector("#message");
+
+    let clicks = 0;
+
+    button.addEventListener("click", function() {
+      clicks++;
+      count.textContent = clicks;
+
+      if (clicks >= 5) {
+        button.classList.add("done");
+        message.textContent = "Congratulations!";
+      }
+    });
+  </script>
+
+</body>
+</html>
