@@ -4,140 +4,397 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Programming Assignments</title>
 
+```
+<title>Web Programming | Assignment Portfolio</title>
 
 <style>
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        scroll-behavior: smooth;
     }
 
     body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: #f4f7fb;
-        color: #1f2937;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #080d19;
+        color: #f8fafc;
+        line-height: 1.6;
     }
 
-    header {
-        background: linear-gradient(135deg, #1e3a8a, #2563eb);
-        color: white;
-        text-align: center;
-        padding: 60px 20px;
+    /* NAVBAR */
+
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(8, 13, 25, 0.88);
+        backdrop-filter: blur(15px);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    header h1 {
-        font-size: 38px;
-        margin-bottom: 12px;
+    .nav-container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 18px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    header p {
-        font-size: 17px;
-        opacity: 0.9;
+    .logo {
+        font-size: 21px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
     }
 
-    .container {
-        max-width: 1100px;
-        margin: 45px auto;
-        padding: 0 20px;
+    .logo span {
+        color: #60a5fa;
     }
 
-    .section-title {
-        text-align: center;
-        margin-bottom: 30px;
+    .nav-links {
+        display: flex;
+        gap: 25px;
+        list-style: none;
     }
 
-    .section-title h2 {
-        font-size: 28px;
-        margin-bottom: 8px;
+    .nav-links a {
+        color: #cbd5e1;
+        text-decoration: none;
+        font-size: 14px;
+        transition: 0.3s;
     }
 
-    .section-title p {
-        color: #6b7280;
+    .nav-links a:hover {
+        color: #60a5fa;
     }
 
-    .assignments {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 24px;
-    }
+    /* HERO */
 
-    .card {
-        background: white;
-        border-radius: 16px;
-        padding: 28px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-        text-align: center;
-    }
-
-    .card:hover {
-        transform: translateY(-7px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
-    }
-
-    .number {
-        width: 55px;
-        height: 55px;
-        margin: 0 auto 18px;
-        border-radius: 50%;
-        background: #2563eb;
-        color: white;
+    .hero {
+        min-height: 570px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 20px;
-        font-weight: bold;
+        text-align: center;
+        padding: 80px 20px;
+        position: relative;
+        overflow: hidden;
+        background:
+            radial-gradient(circle at 20% 20%, rgba(37,99,235,0.22), transparent 30%),
+            radial-gradient(circle at 80% 70%, rgba(124,58,237,0.18), transparent 30%);
     }
 
-    .card h3 {
-        font-size: 21px;
-        margin-bottom: 10px;
+    .hero-content {
+        max-width: 850px;
+        position: relative;
+        z-index: 2;
     }
 
-    .card p {
-        color: #6b7280;
-        font-size: 14px;
-        line-height: 1.6;
-        margin-bottom: 20px;
-    }
-
-    .btn {
+    .badge {
         display: inline-block;
+        padding: 8px 17px;
+        border: 1px solid rgba(96,165,250,0.35);
+        background: rgba(37,99,235,0.12);
+        color: #93c5fd;
+        border-radius: 50px;
+        font-size: 13px;
+        margin-bottom: 25px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 7vw, 76px);
+        line-height: 1.05;
+        margin-bottom: 25px;
+        font-weight: 850;
+        letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+        background: linear-gradient(90deg, #60a5fa, #a78bfa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+        color: #94a3b8;
+        font-size: 18px;
+        max-width: 650px;
+        margin: auto;
+    }
+
+    .hero-buttons {
+        margin-top: 35px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        padding: 13px 25px;
+        border-radius: 10px;
         text-decoration: none;
+        font-weight: 700;
+        transition: 0.3s;
+    }
+
+    .primary-btn {
         background: #2563eb;
         color: white;
-        padding: 11px 24px;
-        border-radius: 8px;
-        font-weight: bold;
-        transition: background 0.2s ease;
     }
 
-    .btn:hover {
-        background: #1d4ed8;
+    .primary-btn:hover {
+        transform: translateY(-3px);
+        background: #3b82f6;
     }
+
+    .secondary-btn {
+        border: 1px solid #334155;
+        color: #e2e8f0;
+    }
+
+    .secondary-btn:hover {
+        background: #111827;
+        transform: translateY(-3px);
+    }
+
+    /* STATS */
+
+    .stats {
+        max-width: 1000px;
+        margin: -45px auto 70px;
+        padding: 0 20px;
+        position: relative;
+        z-index: 5;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+
+    .stat {
+        background: rgba(15,23,42,0.92);
+        border: 1px solid #1e293b;
+        padding: 25px;
+        border-radius: 16px;
+        text-align: center;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    }
+
+    .stat-number {
+        font-size: 32px;
+        font-weight: 800;
+        color: #60a5fa;
+    }
+
+    .stat-label {
+        color: #94a3b8;
+        font-size: 13px;
+        margin-top: 4px;
+    }
+
+    /* MAIN */
+
+    .container {
+        max-width: 1150px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .section-heading {
+        text-align: center;
+        margin-bottom: 45px;
+    }
+
+    .section-heading small {
+        color: #60a5fa;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .section-heading h2 {
+        font-size: 38px;
+        margin-top: 8px;
+    }
+
+    .section-heading p {
+        color: #64748b;
+        margin-top: 8px;
+    }
+
+    /* WEEK CARDS */
+
+    .weeks {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .week-card {
+        background: linear-gradient(145deg, #111827, #0f172a);
+        border: 1px solid #1e293b;
+        border-radius: 20px;
+        padding: 30px;
+        position: relative;
+        overflow: hidden;
+        transition: 0.35s;
+    }
+
+    .week-card:hover {
+        transform: translateY(-8px);
+        border-color: #3b82f6;
+        box-shadow: 0 20px 50px rgba(37,99,235,0.12);
+    }
+
+    .week-card::before {
+        content: "";
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: #2563eb;
+        opacity: 0.08;
+        right: -35px;
+        top: -35px;
+    }
+
+    .week-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 22px;
+    }
+
+    .week-number {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        background: rgba(37,99,235,0.15);
+        color: #60a5fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 800;
+        font-size: 16px;
+    }
+
+    .task-count {
+        color: #94a3b8;
+        font-size: 13px;
+    }
+
+    .week-card h3 {
+        font-size: 25px;
+        margin-bottom: 8px;
+    }
+
+    .week-card > p {
+        color: #64748b;
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    /* TASKS */
+
+    .tasks {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+
+    .task {
+        text-decoration: none;
+        text-align: center;
+        padding: 10px 5px;
+        border-radius: 8px;
+        background: #0b1220;
+        border: 1px solid #1e293b;
+        color: #cbd5e1;
+        font-size: 12px;
+        font-weight: 600;
+        transition: 0.25s;
+    }
+
+    .task:hover {
+        background: #2563eb;
+        border-color: #2563eb;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    /* SPECIAL WEEK 2 */
+
+    .full-width {
+        grid-column: 1 / -1;
+    }
+
+    /* FOOTER */
 
     footer {
-        margin-top: 60px;
-        background: #111827;
-        color: white;
+        margin-top: 100px;
+        padding: 50px 20px;
         text-align: center;
-        padding: 25px 20px;
+        border-top: 1px solid #1e293b;
+        background: #050914;
+    }
+
+    footer h3 {
+        font-size: 20px;
+        margin-bottom: 8px;
     }
 
     footer p {
-        margin: 5px 0;
-        font-size: 14px;
+        color: #64748b;
+        font-size: 13px;
     }
 
-    @media (max-width: 600px) {
-        header h1 {
-            font-size: 30px;
+    .footer-line {
+        width: 50px;
+        height: 3px;
+        background: #2563eb;
+        margin: 18px auto;
+        border-radius: 5px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 800px) {
+
+        .nav-links {
+            display: none;
         }
 
-        .container {
-            margin: 30px auto;
+        .stats-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .weeks {
+            grid-template-columns: 1fr;
+        }
+
+        .hero {
+            min-height: 500px;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+        }
+    }
+
+    @media (max-width: 450px) {
+
+        .tasks {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .hero p {
+            font-size: 15px;
         }
     }
 </style>
@@ -148,64 +405,292 @@
 <body>
 
 ```
-<header>
-    <h1>Web Programming Assignments</h1>
-    <p>My collection of weekly HTML, CSS and JavaScript tasks</p>
-</header>
+<!-- NAVIGATION -->
 
-<main class="container">
+<nav>
+    <div class="nav-container">
 
-    <div class="section-title">
-        <h2>My Assignments</h2>
-        <p>Select a week to view the completed work.</p>
+        <div class="logo">
+            Web<span>Dev</span> Portfolio
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#assignments">Assignments</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            WEB PROGRAMMING • ASSIGNMENT PORTFOLIO
+        </div>
+
+        <h1>
+            My Web Programming<br>
+            <span>Journey</span>
+        </h1>
+
+        <p>
+            Welcome to my web programming assignment portfolio.
+            Explore my weekly projects, experiments, and practical tasks
+            developed throughout the course.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#assignments" class="primary-btn">
+                Explore Assignments ↓
+            </a>
+
+            <a href="#about" class="secondary-btn">
+                About This Portfolio
+            </a>
+        </div>
+
     </div>
 
-    <div class="assignments">
+</section>
 
-        <div class="card">
-            <div class="number">01</div>
+
+<!-- STATISTICS -->
+
+<section class="stats">
+
+    <div class="stats-grid">
+
+        <div class="stat">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Weeks Completed</div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number">28+</div>
+            <div class="stat-label">Practical Tasks</div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Learning & Practice</div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ASSIGNMENTS -->
+
+<main class="container" id="assignments">
+
+    <div class="section-heading">
+        <small>My Work</small>
+        <h2>Weekly Assignments</h2>
+        <p>Select any task below to view the completed work.</p>
+    </div>
+
+
+    <div class="weeks">
+
+
+        <!-- WEEK 1 -->
+
+        <div class="week-card">
+
+            <div class="week-top">
+                <div class="week-number">01</div>
+                <div class="task-count">8 Tasks</div>
+            </div>
+
             <h3>Week 1</h3>
-            <p>Introduction to web programming and basic HTML.</p>
-            <a href="week1.html" class="btn">View Assignment</a>
+
+            <p>
+                Introduction to web programming and foundational
+                HTML tasks.
+            </p>
+
+            <div class="tasks">
+
+                <a class="task" href="week1/WEB TASK-1.html">Task 01</a>
+                <a class="task" href="week1/WEB TASK-2.html">Task 02</a>
+                <a class="task" href="week1/WEB TASK-3.html">Task 03</a>
+                <a class="task" href="week1/WEB TASK-4.html">Task 04</a>
+                <a class="task" href="week1/WEB TASK-5.html">Task 05</a>
+                <a class="task" href="week1/WEB TASK-6.html">Task 06</a>
+                <a class="task" href="week1/WEB TASK-7.html">Task 07</a>
+                <a class="task" href="week1/WEB TASK-8.html">Task 08</a>
+
+            </div>
+
         </div>
 
-        <div class="card">
-            <div class="number">02</div>
+
+        <!-- WEEK 2 -->
+
+        <div class="week-card">
+
+            <div class="week-top">
+                <div class="week-number">02</div>
+                <div class="task-count">Week 2</div>
+            </div>
+
             <h3>Week 2</h3>
-            <p>HTML structure, elements and web page development.</p>
-            <a href="week2.html" class="btn">View Assignment</a>
+
+            <p>
+                Continue exploring web development concepts
+                and practical implementation.
+            </p>
+
+            <div class="tasks">
+
+                <a class="task" href="week2.html">Open Week 2</a>
+
+            </div>
+
         </div>
 
-        <div class="card">
-            <div class="number">03.01</div>
-            <h3>Week 3-01</h3>
-            <p>Web programming task and practical implementation.</p>
-            <a href="week3.01.html" class="btn">View Assignment</a>
+
+        <!-- WEEK 3.01 -->
+
+        <div class="week-card">
+
+            <div class="week-top">
+                <div class="week-number">03.01</div>
+                <div class="task-count">8 Tasks</div>
+            </div>
+
+            <h3>Week 3.01</h3>
+
+            <p>
+                Practical web programming exercises and
+                interactive page development.
+            </p>
+
+            <div class="tasks">
+
+                <a class="task" href="week3-01/WEB TASK-1.html">Task 01</a>
+                <a class="task" href="week3-01/WEB TASK-2.html">Task 02</a>
+                <a class="task" href="week3-01/WEB TASK-3.html">Task 03</a>
+                <a class="task" href="week3-01/WEB TASK-4.html">Task 04</a>
+                <a class="task" href="week3-01/WEB TASK-5.html">Task 05</a>
+                <a class="task" href="week3-01/WEB TASK-6.html">Task 06</a>
+                <a class="task" href="week3-01/WEB TASK-7.html">Task 07</a>
+                <a class="task" href="week3-01/WEB TASK-8.html">Task 08</a>
+
+            </div>
+
         </div>
 
-        <div class="card">
-            <div class="number">03.02</div>
-            <h3>Week 3-02</h3>
-            <p>Additional practical web programming task.</p>
-            <a href="week3.02.html" class="btn">View Assignment</a>
+
+        <!-- WEEK 3.02 -->
+
+        <div class="week-card">
+
+            <div class="week-top">
+                <div class="week-number">03.02</div>
+                <div class="task-count">7 Tasks</div>
+            </div>
+
+            <h3>Week 3.02</h3>
+
+            <p>
+                Additional programming exercises and
+                practical web development tasks.
+            </p>
+
+            <div class="tasks">
+
+                <a class="task" href="week3-02/WEB TASK-1.html">Task 01</a>
+                <a class="task" href="week3-02/WEB TASK-2.html">Task 02</a>
+                <a class="task" href="week3-02/WEB TASK-3.html">Task 03</a>
+                <a class="task" href="week3-02/WEB TASK-4.html">Task 04</a>
+                <a class="task" href="week3-02/WEB TASK-5.html">Task 05</a>
+                <a class="task" href="week3-02/WEB TASK-6.html">Task 06</a>
+                <a class="task" href="week3-02/WEB TASK-7.html">Task 07</a>
+
+            </div>
+
         </div>
 
-        <div class="card">
-            <div class="number">04</div>
-            <h3>Week4</h3>
-            <p>Advanced web programming practice and implementation.</p>
-            <a href="week4.html" class="btn">View Assignment</a>
+
+        <!-- WEEK 4 -->
+
+        <div class="week-card full-width">
+
+            <div class="week-top">
+                <div class="week-number">04</div>
+                <div class="task-count">5 Tasks</div>
+            </div>
+
+            <h3>Week 4</h3>
+
+            <p>
+                More advanced web programming concepts,
+                coding practice, and implementation.
+            </p>
+
+            <div class="tasks">
+
+                <a class="task" href="week4/WEB TASK-1.html">Task 01</a>
+                <a class="task" href="week4/WEB TASK-2.html">Task 02</a>
+                <a class="task" href="week4/WEB TASK-3.html">Task 03</a>
+                <a class="task" href="week4/WEB TASK-4.html">Task 04</a>
+                <a class="task" href="week4/WEB TASK-5.html">Task 05</a>
+
+            </div>
+
         </div>
 
     </div>
 
 </main>
 
-<footer>
-    <p>Web Programming</p>
-    <p>Assignments Portfolio</p>
-</footer>
 
+<!-- ABOUT -->
+
+<section class="container" id="about" style="margin-top: 100px;">
+
+    <div class="section-heading">
+
+        <small>About</small>
+
+        <h2>My Learning Portfolio</h2>
+
+        <p>
+            This website brings together my web programming assignments
+            and practical work completed throughout the course.
+            Each section contains individual tasks that can be opened
+            directly from this homepage.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>Web Programming</h3>
+
+    <div class="footer-line"></div>
+
+    <p>Assignment Portfolio • HTML • CSS • JavaScript</p>
+
+    <p style="margin-top: 8px;">
+        © 2026 My Web Programming Portfolio
+    </p>
+
+</footer>
+```
 
 </body>
 </html>
