@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iman's Web Programming Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-deep: #070913;
-            --bg-card: #111827; /* Solid, 100% opaque background to guarantee 100% contrast score */
-            --border-color: #374151;
-            --border-hover: #ec4899;
+            --bg-color: #030712;
+            --card-bg: #0f172a;
+            --border-color: #334155;
             --text-main: #ffffff;
-            --text-muted: #f1f5f9; /* Maximum contrast light gray */
+            --text-muted: #f8fafc;
             --accent-pink: #ec4899;
-            --gradient-primary: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            --accent-purple: #8b5cf6;
         }
 
         * {
@@ -25,7 +24,7 @@
         }
 
         body {
-            background-color: var(--bg-deep);
+            background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
             min-height: 100vh;
@@ -34,11 +33,11 @@
         /* Skip Link for Accessibility */
         .skip-link {
             position: absolute;
-            top: -40px;
+            top: -50px;
             left: 20px;
             background: var(--accent-pink);
             color: white;
-            padding: 8px 16px;
+            padding: 10px 20px;
             border-radius: 6px;
             z-index: 100;
             transition: top 0.2s ease;
@@ -50,49 +49,47 @@
         }
 
         header {
-            padding: 80px 20px 60px;
+            padding: 70px 20px 50px;
             text-align: center;
-            background: #0f172a;
+            background: #0b0f19;
             border-bottom: 2px solid var(--border-color);
         }
 
         .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            display: inline-block;
             background: #1e1b4b;
-            border: 1px solid #818cf8;
+            border: 2px solid #818cf8;
             padding: 6px 16px;
             border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 700;
-            color: #c7d2fe;
+            color: #e0e7ff;
             margin-bottom: 20px;
         }
 
         header h1 {
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 800;
-            margin-bottom: 16px;
-            background: var(--gradient-primary);
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #818cf8 0%, #ec4899 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         header p {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
             max-width: 600px;
             margin: 0 auto;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         nav {
             display: flex;
             justify-content: center;
-            gap: 12px;
-            padding: 14px;
-            background: #0f172a;
+            gap: 15px;
+            padding: 15px;
+            background: #0b0f19;
             position: sticky;
             top: 0;
             z-index: 50;
@@ -106,12 +103,12 @@
             font-size: 0.95rem;
             padding: 8px 16px;
             border-radius: 8px;
-            transition: all 0.2s ease;
+            transition: background 0.2s;
         }
 
         nav a:hover, nav a:focus {
             color: white;
-            background: #334155;
+            background: #1e293b;
         }
 
         .container {
@@ -135,7 +132,7 @@
         .section-header p {
             color: var(--text-muted);
             font-size: 1.05rem;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .weeks-grid {
@@ -146,19 +143,12 @@
         }
 
         .week-card {
-            background: var(--bg-card);
+            background: var(--card-bg);
             border: 2px solid var(--border-color);
-            border-radius: 20px;
+            border-radius: 16px;
             padding: 25px;
             position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-        }
-
-        .week-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.7);
-            border-color: var(--border-hover);
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5);
         }
 
         .week-card::before {
@@ -167,8 +157,8 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 5px;
-            background: var(--gradient-primary);
+            height: 4px;
+            background: linear-gradient(90deg, #818cf8, #ec4899);
         }
 
         .card-top {
@@ -184,10 +174,10 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #f472b6;
-            background: #500724;
+            background: #4c0519;
             padding: 4px 10px;
             border-radius: 6px;
-            border: 1px solid #991b1b;
+            border: 1px solid #9f1239;
         }
 
         .task-counter {
@@ -207,7 +197,7 @@
             color: var(--text-muted);
             font-size: 0.95rem;
             margin-bottom: 20px;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .tasks-container {
@@ -217,8 +207,8 @@
         }
 
         .task-btn {
-            background: #1f2937;
-            border: 1px solid #4b5563;
+            background: #1e293b;
+            border: 2px solid #475569;
             color: #ffffff;
             text-decoration: none;
             padding: 10px 12px;
@@ -236,27 +226,26 @@
             background: var(--accent-pink);
             border-color: var(--accent-pink);
             color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(236, 72, 153, 0.4);
         }
 
         .task-btn.special {
             grid-column: span 2;
-            background: #311042;
-            border-color: #a855f7;
-            color: #fbcfe8;
+            background: #3b0764;
+            border-color: #c084fc;
+            color: #fae8ff;
             font-weight: 800;
         }
 
         .task-btn.special:hover {
             background: var(--accent-pink);
+            border-color: var(--accent-pink);
             color: white;
         }
 
         .about-card {
-            background: #111827;
+            background: var(--card-bg);
             border: 2px solid var(--border-color);
-            border-radius: 20px;
+            border-radius: 16px;
             padding: 40px 30px;
             text-align: center;
             max-width: 800px;
@@ -273,7 +262,7 @@
         .about-card p {
             color: var(--text-muted);
             margin-bottom: 20px;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .tech-tags {
@@ -284,13 +273,13 @@
         }
 
         .tech-tag {
-            background: #1f2937;
-            border: 1px solid #4b5563;
+            background: #1e293b;
+            border: 2px solid #475569;
             padding: 6px 14px;
             border-radius: 20px;
             font-size: 0.85rem;
             color: #ffffff;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         footer {
@@ -299,8 +288,8 @@
             border-top: 2px solid var(--border-color);
             color: var(--text-muted);
             font-size: 0.95rem;
-            background: #070913;
-            font-weight: 600;
+            background: #030712;
+            font-weight: 700;
         }
 
         footer span {
