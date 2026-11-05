@@ -1,0 +1,242 @@
+:root {
+    --ink: #f2eff5;
+    --teal: #b9a6d3;
+    --teal-dark: #d5c5eb;
+    --coral: #a78bfa;
+    --paper: #09090c;
+    --white: #ffffff;
+    --muted: #aaa3b3;
+    --line: #302b38;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(ellipse at 80% 10%, #21172f 0%, transparent 35%),
+        #09090c;
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+a { 
+    color: var(--teal-dark); 
+}
+
+a:focus-visible { 
+    outline: 3px solid var(--coral); 
+    outline-offset: 4px; 
+}
+
+.skip-link { 
+    position: absolute; 
+    top: 10px; 
+    left: -9999px; 
+    z-index: 10; 
+    padding: 10px 14px; 
+    border-radius: 5px; 
+    background: var(--white); 
+    color: var(--teal-dark); 
+}
+
+.skip-link:focus { 
+    left: 10px; 
+}
+
+.site-header {
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    color: var(--white);
+    padding: 16px max(20px, calc((100% - 1100px) / 2));
+    box-shadow: none;
+}
+
+.topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px 18px;
+    border: 1px solid #302b38;
+    border-radius: 50px;
+    background: #151419;
+}
+
+.brand {
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.topline nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.topline nav a {
+    color: var(--muted);
+    font-size: .92rem;
+    text-decoration: none;
+    transition: color .2s ease;
+}
+
+.topline nav a:hover {
+    color: var(--white);
+}
+
+.hero {
+    max-width: 850px;
+    padding: 30px 0 25px;
+}
+
+.eyebrow {
+    margin: 0 0 10px;
+    color: #f5b39d;
+    font-size: .82rem;
+    font-weight: bold;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+h1 {
+    max-width: 680px;
+    margin: 0 0 14px;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.08;
+    letter-spacing: -3px;
+}
+
+.hero p {
+    margin: 4px 0;
+    color: #e0eeea;
+    font-size: .92rem;
+}
+
+.student-name { 
+    display: inline-block; 
+    margin-top: 18px !important; 
+    padding: 7px 12px; 
+    border: 1px solid #6e9e95; 
+    border-radius: 4px; 
+    color: var(--white) !important; 
+    font-size: .92rem; 
+}
+
+main {
+    width: min(1100px, calc(100% - 40px));
+    margin: 20px auto 35px;
+}
+
+.week-section {
+    margin-bottom: 14px;
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: #121116;
+    box-shadow: 0 8px 25px #00000030;
+    scroll-margin-top: 20px;
+}
+
+.week-section h2 {
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+    font-size: 1.2rem;
+}
+
+.tasks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+    gap: 10px;
+}
+
+.task-card {
+    display: block;
+    min-height: 110px;
+    padding: 12px;
+    border: 1px solid #302b38;
+    border-radius: 10px;
+    background: #19171e;
+    color: var(--ink);
+    text-decoration: none;
+    transition: transform .2s ease, border-color .2s ease,
+                background .2s ease, box-shadow .2s ease;
+}
+
+.task-card:hover {
+    border-color: #a78bfa;
+    background: #211b2b;
+    box-shadow: 0 8px 25px #a78bfa20;
+    transform: translateY(-5px);
+}
+
+.task-card .tag {
+    margin-bottom: 4px;
+    color: #bba5e8;
+    font-size: .68rem;
+    font-weight: bold;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.task-card h3 {
+    margin: 0 0 5px;
+    font-size: .95rem;
+}
+
+.task-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: .82rem;
+}
+
+footer {
+    padding: 25px 20px;
+    border-top: 1px solid var(--line);
+    background: #0d0c11;
+    color: var(--muted);
+    text-align: center;
+    font-size: .88rem;
+}
+
+footer p {
+    margin: 4px 0;
+}
+
+@media (max-width: 620px) {
+    .site-header {
+        padding: 18px 20px 30px;
+    }
+
+    .topline {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .topline nav {
+        gap: 10px 16px;
+    }
+
+    main {
+        width: min(calc(100% - 24px), 1100px);
+        margin-top: 20px;
+    }
+
+    .week-section {
+        padding: 18px;
+    }
+}
