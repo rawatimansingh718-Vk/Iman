@@ -1,73 +1,492 @@
+
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lighthouse Performance Optimization Report</title>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Lighthouse performance evaluation and optimization report for my Web Programming coursework website.">
+
+<title>Website Performance Optimization Report</title>
+
 <style>
-:root{--bg:#fff;--text:#1b1f2a;--mute:#5a6275;--line:#dde1ea;--accent:#3b5bdb;--soft:#f4f6fb;color-scheme:light dark}
-@media (prefers-color-scheme:dark){:root{--bg:#0f1420;--text:#e8ecf6;--mute:#9aa5bf;--line:#2a3350;--accent:#8fa6ff;--soft:#161d30}}
-body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
-main{max-width:820px;margin:0 auto;padding:48px 24px 72px}
-h1{font-size:2rem;line-height:1.2;margin:0 0 8px}
-h2{font-size:1.25rem;margin:40px 0 8px;padding-top:16px;border-top:1px solid var(--line)}
-.meta{color:var(--mute);margin:0 0 24px}
-.meta b{color:var(--text)}
-figure{margin:20px 0}
-img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
-figcaption{color:var(--mute);font-size:.9rem;margin-top:6px}
-code{background:var(--soft);padding:1px 6px;border-radius:5px;font-size:.92em}
-table{border-collapse:collapse;width:100%;margin:12px 0}
-th,td{border:1px solid var(--line);padding:10px 12px;text-align:left}
-th{background:var(--soft)}
-.score{font-weight:700;color:var(--accent)}
-.note{background:var(--soft);border-left:3px solid var(--accent);padding:12px 16px;border-radius:6px}
-@media print{img{break-inside:avoid}h2{break-after:avoid}}
-</style></head><body><main>
-<h1>Lighthouse Performance Optimization Report</h1>
-<p class="meta"><b>Course:</b> Web Programming<br><b>Student:</b> Rawat Iman Singh, Computer Engineering, Gachon University<br><b>Site:</b> <a href="https://rawatimansingh718-vk.github.io/Iman/">rawatimansingh718-vk.github.io/Iman/</a><br><b>Date:</b> November 6, 2026</p>
+:root {
+    --bg: #f5f7fc;
+    --card: #ffffff;
+    --text: #20283a;
+    --muted: #68738a;
+    --accent: #315bd6;
+    --border: #e1e6f0;
+    --soft: #edf2ff;
+}
 
-<h2>1. Summary</h2>
-<p>I ran Lighthouse on my coursework hub, applied several optimizations to its HTML, CSS and JavaScript, and ran Lighthouse again. The Performance score improved from <b>99 to 100</b>.</p>
+* {
+    box-sizing: border-box;
+}
 
-<h2>2. Test setup</h2>
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+}
+
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background: var(--card);
+    border-radius: 14px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+}
+
+h1 {
+    font-size: 30px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 21px;
+    margin-top: 38px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+}
+
+h3 {
+    font-size: 17px;
+    margin-top: 24px;
+}
+
+.meta {
+    color: var(--muted);
+    margin-bottom: 28px;
+}
+
+.meta strong {
+    color: var(--text);
+}
+
+p {
+    margin: 12px 0;
+}
+
+li {
+    margin-bottom: 9px;
+}
+
+figure {
+    margin: 24px 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+figcaption {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: center;
+}
+
+code {
+    background: var(--soft);
+    color: var(--accent);
+    padding: 3px 6px;
+    border-radius: 4px;
+}
+
+.note {
+    background: var(--soft);
+    border-left: 4px solid var(--accent);
+    padding: 14px 18px;
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+}
+
+th, td {
+    border: 1px solid var(--border);
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background: var(--soft);
+}
+
+.score {
+    font-weight: bold;
+    color: #16834a;
+}
+
+footer {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    text-align: center;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    main {
+        margin: 12px;
+        padding: 22px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
+
+@media print {
+    main {
+        box-shadow: none;
+        margin: 0;
+    }
+
+    figure, table {
+        break-inside: avoid;
+    }
+}
+</style>
+</head>
+
+<body>
+<main>
+
+<h1>Website Performance Optimization Report</h1>
+
+<p class="meta">
+<strong>Course:</strong> Web Programming<br>
+<strong>Student:</strong> Rawat Iman Singh<br>
+<strong>Department:</strong> Computer Engineering<br>
+<strong>University:</strong> Gachon University<br>
+<strong>Website:</strong>
+<a href="https://rawatimansingh718-vk.github.io/Iman/">
+My Web Programming Portfolio
+</a><br>
+<strong>Date:</strong> November 7, 2026
+</p>
+
+<h2>1. Introduction</h2>
+
+<p>
+The purpose of this assignment was to evaluate the performance
+of my Web Programming portfolio website using Google Lighthouse.
+I performed performance tests, reviewed the audit recommendations,
+and compared the results from two Lighthouse runs.
+</p>
+
+<p>
+This report presents the performance scores, important metrics,
+identified issues, and the improvements to consider for making
+the website faster and more efficient.
+</p>
+
+<h2>2. Lighthouse Testing Setup</h2>
+
 <ul>
-<li>Tool: Lighthouse 13.5.0 in Chrome DevTools</li>
-<li>Mode: Mobile (emulated Moto G Power, slow 4G throttling), Performance category</li>
-<li>Before run: 2:30 PM, score <b>99</b></li>
-<li>After run: 2:46 PM, score <b>100</b></li>
-<li>Both runs used the same URL and the same browser profile, so the comparison is like for like.</li>
+<li><strong>Testing tool:</strong> Google Lighthouse</li>
+<li><strong>Browser:</strong> Google Chrome</li>
+<li><strong>Testing category:</strong> Performance</li>
+<li><strong>Website:</strong> My Web Programming Portfolio</li>
+<li><strong>Before performance score:</strong> 99</li>
+<li><strong>After performance score:</strong> 100</li>
 </ul>
-<li>Minify JavaScript: estimated savings of 60 KiB</li>
-<li>Reduce unused JavaScript: estimated savings of 484 KiB</li>
-<li>Avoid long main-thread tasks: 5 long tasks found</li>
-</ul>
-<p class="note">My page loads no external libraries, scripts or fonts, so the large unused-JavaScript figure most likely came from browser extensions active in my profile rather than from my own code. I could not confirm this directly, so I treated my own inline script as the part I could actually improve.</p>
 
-<h2>4. Optimizations applied</h2>
+<p>
+The same website was evaluated in both tests. Lighthouse
+provided performance metrics and recommendations that helped
+identify possible areas for improvement.
+</p>
+
+<h2>3. Initial Performance Results</h2>
+
+<p>
+In the initial Lighthouse test, my website received a
+Performance score of 99 out of 100. Although this was already
+a very good result, Lighthouse identified some opportunities
+to improve loading and resource delivery.
+</p>
+
+<figure>
+<img src="before%20score.png"
+     alt="Initial Lighthouse performance score of 99">
+<figcaption>
+Figure 1. Initial Lighthouse Performance score: 99.
+</figcaption>
+</figure>
+
+<h3>3.1 Performance Insights</h3>
+
+<p>
+The initial audit highlighted several areas that could
+affect the loading performance of the website.
+</p>
+
+<table>
+<thead>
+<tr>
+<th>Insight</th>
+<th>Estimated savings or observation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Render-blocking requests</td>
+<td>270 ms estimated savings</td>
+</tr>
+<tr>
+<td>Use efficient cache lifetimes</td>
+<td>324 KiB estimated savings</td>
+</tr>
+<tr>
+<td>Improve image delivery</td>
+<td>350 KiB estimated savings</td>
+</tr>
+<tr>
+<td>Network dependency tree</td>
+<td>Resource loading dependencies</td>
+</tr>
+<tr>
+<td>Layout shift culprits</td>
+<td>Potential layout stability issues</td>
+</tr>
+<tr>
+<td>Optimize DOM size</td>
+<td>DOM structure review recommended</td>
+</tr>
+<tr>
+<td>LCP breakdown</td>
+<td>Largest Contentful Paint analysis</td>
+</tr>
+<tr>
+<td>Third parties</td>
+<td>Third-party resource analysis</td>
+</tr>
+</tbody>
+</table>
+
+<figure>
+<img src="before%20insights.png"
+     alt="Lighthouse insights before optimization">
+<figcaption>
+Figure 2. Lighthouse performance insights identified in the initial audit.
+</figcaption>
+</figure>
+
+<h2>4. Optimization Areas</h2>
+
+<p>
+Based on the Lighthouse recommendations, I identified
+the following optimization techniques as relevant areas
+to improve the website.
+</p>
+
 <ol>
-<li><b>External, minified, deferred JavaScript.</b> I moved the inline script into <code>app.min.js</code> and load it with <code>defer</code>. It no longer blocks HTML parsing and the browser can cache it.</li>
-<li><b>Minified CSS.</b> I removed whitespace and comments from the inline stylesheet, reducing it to about 6 KB.</li>
-<li><b><code>content-visibility: auto</code> on week cards.</b> The browser skips rendering work for off-screen cards, which reduces main-thread work during load.</li>
-<li><b>More efficient search script.</b> DOM lookups and lowercase text are computed once instead of on every keystroke, and input is debounced by 100 ms.</li>
-<li><b>Targeted CSS transitions.</b> I replaced a catch-all <code>transition: .2s</code> with specific properties so the browser animates only what changes.</li>
-<li><b>Inline favicon and meta description.</b> The data-URI favicon avoids a failed <code>/favicon.ico</code> request, and the description helps search engines.</li>
+<li>
+<strong>Reduce render-blocking resources:</strong>
+Review CSS and JavaScript loading so that important page
+content can be displayed without unnecessary delays.
+</li>
+
+<li>
+<strong>Improve image delivery:</strong>
+Compress large images, use suitable image formats,
+and provide appropriate image dimensions.
+</li>
+
+<li>
+<strong>Improve browser caching:</strong>
+Use suitable cache policies for static resources
+so returning visitors do not need to download
+the same files unnecessarily.
+</li>
+
+<li>
+<strong>Review DOM structure:</strong>
+Keep the HTML structure organized and avoid
+unnecessary elements.
+</li>
+
+<li>
+<strong>Improve layout stability:</strong>
+Provide image dimensions and reserve space for
+content to reduce unexpected layout movement.
+</li>
 </ol>
 
-<h2>5. Code quality fixes made along the way</h2>
-<ul>
-<li>URL-encoded the spaces in the Week 1 and Week 2 link paths.</li>
-<li>Corrected the Week 8 task count (4 to 5) and the footer total (29 to 49).</li>
-<li>Cleaned up inconsistent labels such as "week9".</li>
-</ul>
+<p class="note">
+These are optimization opportunities identified from the audit.
+Only describe an item as completed if you actually applied
+that change to your website.
+</p>
 
-<h2>6. Results</h2>
-<table><thead><tr><th>Metric</th><th>Before</th><th>After</th></tr></thead><tbody>
-<tr><td>Lighthouse Performance</td><td class="score">99</td><td class="score">100</td></tr>
-<tr><td>JavaScript delivery</td><td>Inline, blocks parsing</td><td>Deferred external file</td></tr>
-<tr><td>Render work for off-screen cards</td><td>All cards</td><td>Skipped (<code>content-visibility</code>)</td></tr>
-</tbody></table>
+<h2>5. Performance Results After Testing</h2>
 
-<h2>7. Conclusion and limitations</h2>
-<p>The page was already fast, so the headroom was small, but the changes moved it to a perfect 100 and made the code cleaner and cheaper to run. Lighthouse scores vary slightly between runs, so a one-point difference shows a direction of improvement, not a precise measurement. A fairer follow-up would repeat each run several times in an Incognito window with extensions disabled.</p>
+<p>
+In the later Lighthouse test, my website received a
+Performance score of 100 out of 100. The metrics shown
+in the report were also very good, including a low
+Total Blocking Time and a small Cumulative Layout Shift.
+</p>
 
-<h2>8. Description for the website (2 sentences)</h2>
-<p>I moved my JavaScript into a minified file loaded with <code>defer</code>, minified my CSS, and added <code>content-visibility: auto</code> so off-screen week cards are not rendered up front. I also made the search more efficient and removed a failing favicon request, which raised my Lighthouse Performance score from 99 to 100.</p>
-</main></body></html>
+<figure>
+<img src="after%20score.png"
+     alt="Lighthouse performance score of 100 after testing">
+<figcaption>
+Figure 3. Later Lighthouse Performance score: 100.
+</figcaption>
+</figure>
+
+<h3>5.1 Detailed Performance Metrics</h3>
+
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>After-test result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First Contentful Paint (FCP)</td>
+<td>0.5 seconds</td>
+</tr>
+<tr>
+<td>Largest Contentful Paint (LCP)</td>
+<td>0.5 seconds</td>
+</tr>
+<tr>
+<td>Total Blocking Time (TBT)</td>
+<td>0 milliseconds</td>
+</tr>
+<tr>
+<td>Cumulative Layout Shift (CLS)</td>
+<td>0.006</td>
+</tr>
+<tr>
+<td>Speed Index</td>
+<td>0.5 seconds</td>
+</tr>
+</tbody>
+</table>
+
+<figure>
+<img src="after%20metrics.png"
+     alt="Lighthouse metrics after testing">
+<figcaption>
+Figure 4. Detailed Lighthouse performance metrics after testing.
+</figcaption>
+</figure>
+
+<h2>6. Before and After Comparison</h2>
+
+<table>
+<thead>
+<tr>
+<th>Measurement</th>
+<th>Before</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Performance Score</td>
+<td>99</td>
+<td class="score">100</td>
+</tr>
+<tr>
+<td>First Contentful Paint</td>
+<td>Not recorded here</td>
+<td>0.5 s</td>
+</tr>
+<tr>
+<td>Largest Contentful Paint</td>
+<td>Not recorded here</td>
+<td>0.5 s</td>
+</tr>
+<tr>
+<td>Total Blocking Time</td>
+<td>Not recorded here</td>
+<td>0 ms</td>
+</tr>
+<tr>
+<td>Cumulative Layout Shift</td>
+<td>Not recorded here</td>
+<td>0.006</td>
+</tr>
+<tr>
+<td>Speed Index</td>
+<td>Not recorded here</td>
+<td>0.5 s</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The Performance score increased from 99 to 100.
+This represents a one-point improvement, although Lighthouse
+scores can vary between individual test runs.
+</p>
+
+<h2>7. Learning Outcomes</h2>
+
+<p>
+Through this assignment, I learned how to use Google Lighthouse
+to evaluate website performance and understand its audit results.
+I also learned about the importance of image delivery,
+resource caching, efficient loading, and layout stability.
+</p>
+
+<p>
+The testing process helped me understand that even a website
+with a high performance score can have additional areas
+that can be reviewed and improved.
+</p>
+
+<h2>8. Conclusion</h2>
+
+<p>
+My Web Programming portfolio achieved a Lighthouse Performance
+score of 99 in the initial test and 100 in the later test.
+The later test also showed excellent loading metrics,
+including 0.5-second First Contentful Paint and
+Largest Contentful Paint, 0 milliseconds Total Blocking Time,
+and a Cumulative Layout Shift of 0.006.
+</p>
+
+<p>
+Overall, this assignment gave me practical experience in
+website performance testing and helped me understand how
+Lighthouse recommendations can guide future optimization work.
+</p>
+
+<footer>
+Web Programming | Gachon University<br>
+Website Performance Optimization Report
+</footer>
+
+</main>
+</body>
+</html>
